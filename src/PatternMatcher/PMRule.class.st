@@ -9,6 +9,19 @@ Class {
 }
 
 { #category : #'as yet unclassified' }
+PMRule class >> whenMatches: inIfBlock [
+	"A default/shortcut: returns true when the ifBlock is true"
+	"scope: class-variables  &  class-instance-variables"
+
+	|o|
+	
+   o := PMRule new.
+   o ifBlock: inIfBlock; operationBlock: [:fake| true ].
+
+   ^o.
+]
+
+{ #category : #'as yet unclassified' }
 PMRule class >> whenMatches: inIfBlock execute: inExecBlock [
 	|o|
 	
